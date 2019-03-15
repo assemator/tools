@@ -1,0 +1,4 @@
+#!/bin/sh
+# this is clean all logs script, add this file to /etc/cron.hourly/clean
+cd /var/log
+sudo find . -type f -exec sh -c 'echo -n "" > $1' sh {} \;

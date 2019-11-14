@@ -1,0 +1,22 @@
+ # Main domain
+ http://assem.su, https://assem.su {
+     redir {
+         if {host} not_starts_with www
+         / https://www.assem.su{uri}
+     }
+ }
+
+ www.assem.su {
+     root /var/snap/rocketchat-server/current/www/assemsu
+     gzip
+ }
+ 
+ 
+ 
+ # RocketChat subdomain
+ 
+ rc.assem.su
+proxy / localhost:3000 {
+  websocket
+  transparent
+}

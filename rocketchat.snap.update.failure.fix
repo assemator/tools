@@ -1,0 +1,25 @@
+
+
+Hello community,
+My organization has been suffering from this symptom as well, it took us much time to figure out exactly what is the culprit. So now it's time to contribute back to the community because we all love Rocket.Chat.
+
+According to this article, systemd service will stop trying to restart any service if the restart counter reaches 5 in less than a 10 sec window.
+
+By default, rocket.chat restarts every 100ms.
+
+We've checked our log and verified this is actually the case, as the rocket.chat service stopped after restart counter reaches 6, it no longer restarts. On the other hand, mongoDB server is still undergoing upgrade procedure.
+
+So here's a simple fix:
+
+sudo vim /etc/systemd/system/snap.rocketchat-server.rocketchat-server.service.d/override.conf
+
+[Service]
+StartLimitIntervalSec=0
+RestartSec=20
+
+
+Let me briefly explain:
+StartLimitIntervalSec=0 turns off the timer, in essence this means it will restart forever
+RestartSec=20 gives a 20 second window between each restart, reducing load on server.
+
+Feel free to modify RestartSec to any number as you see fit, as long as StartLimitIntervalSec is set to 0.

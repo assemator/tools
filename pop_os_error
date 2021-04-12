@@ -12,3 +12,9 @@ PARTUUID=06854127-c7dd-4d37-8220-36607e600f64  /recovery  vfat  umask=0077  0  0
 [ERROR distinst:src/installer/state.rs:37] configuring chroot error: root partition not found
 [ERROR distinst:src/installer/mod.rs:298] errored while installing system: root partition not found
 [INFO distinst:ffi/src/installer.rs:188] Install error: root partition not found
+
+
+
+
+https://pop-planet.info/forums/threads/could-not-install-installing-pop-_os-19-04-failed-possibly-due-to-a-hardware-error.144/
+https://pop-planet.info/forums/threads/pop-_os-not-installing-check-this-first.254/

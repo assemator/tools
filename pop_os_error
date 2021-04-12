@@ -1,0 +1,14 @@
+[INFO distinst:src/installer/steps/configure/mod.rs:92] applying LVM initramfs autodetect workaround
+[INFO distinst:src/installer/traits.rs:144] generated the following crypttab data:
+cryptdata UUID=7586a18e-96b9-47d0-937f-2448ada11c09 none luks
+
+[INFO distinst:src/installer/traits.rs:146] generated the following fstab data:
+PARTUUID=13841230-a40e-48cc-bc57-75ea7658c346  /boot/efi  vfat  umask=0077  0  0
+PARTUUID=06854127-c7dd-4d37-8220-36607e600f64  /recovery  vfat  umask=0077  0  0
+
+[INFO distinst:src/installer/steps/configure/mod.rs:104] writing /etc/crypttab
+[INFO distinst:src/installer/steps/configure/mod.rs:109] writing /etc/fstab
+[INFO distinst:src/installer/steps/configure/mod.rs:145] chrooting into target on /tmp/distinst.NwnpHLtv1uLI
+[ERROR distinst:src/installer/state.rs:37] configuring chroot error: root partition not found
+[ERROR distinst:src/installer/mod.rs:298] errored while installing system: root partition not found
+[INFO distinst:ffi/src/installer.rs:188] Install error: root partition not found
